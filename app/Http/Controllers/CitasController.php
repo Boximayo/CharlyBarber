@@ -28,6 +28,7 @@ class Citascontroller extends Controller
     public function index()
     {
         $citas = Citas::all();
+        return \response($citas);
         return view('welcome',  compact('citas'));
     }
 
