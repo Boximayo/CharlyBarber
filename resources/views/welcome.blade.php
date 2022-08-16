@@ -85,6 +85,16 @@
                                 <input type="radio" class="btn-check" name="options-outlined" id="success-outlined"
                                     autocomplete="off" checked>
                                 <a class="btn btn-outline-success" for="success-outlined" data-bs-toggle="modal" data-bs-target="#exampleModal1">Completar</a>
+                                <form action="{{ route('citas.update', $cita->id)}}" method="post">
+                                    @csrf @method('PATCH')
+                                    <div class="form-group row">
+                                        <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>
+                                        <div class="col-sm-10">
+                                          <input name="precio"  class="form-control" id="Precio" value="">
+                                        </div>
+                                      </div>
+                                      <a type="button" class="btn btn-primary">Save changes</a>
+                                </form>
                             </td>
 
                         </tr>
@@ -100,16 +110,7 @@
         </div>
 
     </div>
-    <form action="{{ route('citas.update', $cita->id)}}" method="post">
-        @csrf @method('PATCH')
-        <div class="form-group row">
-            <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>
-            <div class="col-sm-10">
-              <input name="precio"  class="form-control" id="Precio" value="">
-            </div>
-          </div>
-          <a type="button" class="btn btn-primary">Save changes</a>
-    </form>
+
 
     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -119,7 +120,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('citas.update', $cita->id)}}" method="post">
+                <form action="" method="post">
                     @csrf @method('PATCH')
                     <div class="form-group row">
                         <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>

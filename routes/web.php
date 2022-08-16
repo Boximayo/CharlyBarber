@@ -22,8 +22,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-Route::Resource('citas', 'App\Http\Controllers\Citascontroller');
-Route::post("/guardar","App\Http\Controllers\Citascontroller@guardar");
+Route::Resource('citas', 'App\Http\Controllers\CitasController');
+Route::post("/guardar","App\Http\Controllers\CitasController@guardar");
 
 
 Auth::routes();
